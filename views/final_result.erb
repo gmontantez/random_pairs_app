@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2><%=first_name%>, here are your teams.</h2>
+<input type = "hidden" name = "first_name" value = "<%=first_name%>">
+    <%session[:liked_pairs].each do |final|%>
+    <%=final.join(', ')%><br>
+    <%end%>
+
+<h2>Select "Return" to return to the beginning.
+<form method = "post" action = "start_over">
+	<input type = "submit" value = "Return">
+</form>
+
+</h2>
+
+</body>
+</html>

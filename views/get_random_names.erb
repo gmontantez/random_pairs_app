@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function new_textbox(){
+		var input = document.createElement("input");  // This creates an input box or tag. // "input" is same as tag in html (such as <form>)
+		var location = document.getElementById("our_input"); // Finding housing tag from below in <p id="our_input">
+		input.type = "text";
+		input.required = true;
+		input.autofocus = true;
+		input.name = "new_name[]"; // Use the name in your own scripts for this. This is not calling on anything yet at this point. 
+		location.appendChild(input); //Adds input to input_loc
+
+	}
+
+	function remove_box(){
+		var location = document.getElementById("our_input");
+		location.removeChild(location.lastChild);
+	}
+
+
+</script>
+<button onclick="new_textbox()">Add Name</button>
+<button onclick="remove_box()">Delete last textbox</button>
+<h2><%=first_name%>, here is the list of random names:</h2>
+
+<form method = "post" action = "get_random_names">
+	<p id="our_input"></p>
+
+	<!-- First Name: <input type = "text" name = "name1">
+	Second Name: <input type = "text" name = "name2">
+	Third Name: <input type = "text" name = "name3">
+	Fourth Name: <input type = "text" name = "name4">
+	Fifth Name: <input type = "text" name = "name5">
+	Sixth Name: <input type = "text" name = "name6">
+	 -->
+	<input type = "hidden" name = "first_name" value = "<%=first_name%>">
+
+<h3>Then select "Enter":</h3>
+	<input type = "submit" value = "Enter">
+</form>
+</body>
+</html>
+

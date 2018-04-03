@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Momma Montantez</title>
+</head>
+<body>
+<h2><%=first_name%>, please select the acceptable pairs.</h2>
+<form method= "post" action ="check_name">
+	<input type = "hidden" name = "first_name" value = "<%=first_name%>">
+ 
+  <% pairs_array.each do |pairs| %>
+ <!--  <input type = "hidden" name = "first_name" value = "<%=first_name%>"> -->
+	<input type = "checkbox" name = "teams[]" value ='<%=pairs.join(',')%>'>
+    <%=pairs.join(', ')%><br>
+  <%end%>
+  <input type="submit" value="next">
+</form>
+</body>
+</html>
+
